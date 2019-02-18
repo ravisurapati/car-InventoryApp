@@ -1,0 +1,56 @@
+<div style="text-align:center">
+        
+  <div class="container">
+      <div class="col-md-6">
+          <div class="form-area"> 
+              <form role="form"  ng-controller="DemoController" name="myForm" novalidate>
+                      <br style="clear:both">
+                      <h3 style="margin-bottom: 25px; text-align: center;">Add Models</h3>
+                      <div class="form-group">
+                       <label for="exampleInputEmail1">Manfacturers</label>
+                       <select id="account_id" #account_id="ngModel" class="hideLabel form-control" [(ngModel)]="mid" name="mid" (change)="selectName()" >  
+                       <option selected="" value=""></option>  
+                        <option [ngValue]="m.MafID" *ngFor="let m of getManuList">  
+                                    {{m.ManufactureName}}  
+                         </option>  
+                       </select> 
+                      </div>
+                      <label for="exampleInputEmail1">Model Name</label>
+                      <div class="form-group">
+                              <input type="text" class="form-control" id="modelname" name="modelname" placeholder="Name" [(ngModel)]="modelname" required>
+                      </div>
+                      <label for="exampleInputEmail1">Model Color</label>
+                      <div class="form-group">
+                              <input type="text" class="form-control" id="color" name="color" placeholder="Color" [(ngModel)]="color" required>
+                      </div>
+                      <label for="exampleInputEmail1">Model Year</label>
+                      <div class="form-group">
+                              <input type="date" class="form-control" id="year" name="year" placeholder="Manufacturing Year" [(ngModel)]="year" required>
+                      </div>
+                      <label for="exampleInputEmail1">Registration Number</label>
+                      <div class="form-group">
+                              <input type="text" class="form-control" id="regno" name="registration number" placeholder="Registration Number" [(ngModel)]="registrationno" required>
+                      </div>
+                      <label for="exampleInputEmail1">Info About Model</label>
+                      <div class="form-group">
+                              <input type="text"  style="height:200px"class="form-control" id="Description" name="name" placeholder="Description" [(ngModel)]="description" required>
+                      </div>
+                      <div class="form-group"> 
+                              <label for="time" class="col-sm-3 control-label">Picture </label>
+                                <div class="col-sm-9">
+                              <input type="file"  name="fileToUpload" id="fileToUpload" required />
+                            </div>
+                              </div>
+
+                              
+                          
+                      <button type="button"  class="btn btn-primary pull-center" (click)="saveModel()">Save Details</button>
+                    </form>
+              </div>
+         </div>
+   </div>
+</div>
+      
+      
+      
+      
